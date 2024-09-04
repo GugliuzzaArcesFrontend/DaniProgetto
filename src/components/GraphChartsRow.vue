@@ -58,7 +58,7 @@
 
 <script>
 export default {
-    name: 'TestBS'
+    name: 'GraphChart'
 }
 </script>
 
