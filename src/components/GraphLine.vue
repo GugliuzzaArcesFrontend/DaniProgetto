@@ -1,4 +1,6 @@
+<!-- link e script dependecies prese dal sorgente di https://adminlte.io/themes/v3/ -->
 <template>
+    
     <div class="card bg-gradient-info">
         <div class="card-header border-0 ui-sortable-handle" style="cursor: move;">
             <h3 class="card-title">

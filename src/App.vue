@@ -18,31 +18,19 @@
   <!--   <button @click="onClickDateNow($event)" >Data di oggi</button>
     <button @click="onClickChangeColor($event)" >CambiaColore</button>
  -->
-    <GraphRecap/>
-    <GraphLine/>
-    <GraphChartsRow/>
-    <CardExtended/>
+    <ChartArea title="Grafico ad area"/>
+    
   </main>
 </template>
 
 <script >
-// import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-import CinappiWorld from './components/CinappiWorld.vue'
-import GraphLine from './components/GraphLine.vue';
-import GraphRecap from './components/GraphRecap.vue';
-import GraphChartsRow from './components/GraphChartsRow.vue';
-import CardExtended from './components/CardExtended.vue';
+
+import ChartArea from './components/ChartArea.vue';
 
 export default {
   name: 'App',
   components: {
-    CinappiWorld,
-    TheWelcome,
-    CardExtended,
-    GraphLine,
-    GraphRecap,
-    GraphChartsRow
+    ChartArea
   },
   data() {
     return {

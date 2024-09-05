@@ -1,5 +1,6 @@
-<template>
-    <div class="row">
+<!-- link e script dependecies prese dal sorgente di https://adminlte.io/themes/v3/ -->
+ <template>
+    <div class="row"> <span>Widgets cards abilities</span>
         <div class="col-md-3">
             <div class="card card-primary">
                 <div class="card-header">
@@ -95,7 +96,7 @@
 </template>
 <script>
 export default {
-    name: 'CardExtended',
+    name: 'CardsExtended',
     props: {}
 }
 </script>

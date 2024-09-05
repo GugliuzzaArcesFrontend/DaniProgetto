@@ -5,4 +5,3 @@ import App from './App.vue';
 
 const app = createApp(App);
 app.mount('#app');
-app.component('font-awesome-icon', FontAwesomeIcon)

@@ -1,6 +1,7 @@
+<!-- link e script dependecies prese dal sorgente di https://adminlte.io/themes/v3/ -->
 <template>
    
-    <div class="row">
+    <div class="row"><span>Info boxes small</span>
         <div class="col-lg-3 col-6">
             <div class="small-box bg-info">
                 <div class="inner">
@@ -58,7 +59,7 @@
 
 <script>
 export default {
-    name: 'GraphChart'
+    name: 'InfoboxSmall'
 }
 </script>
 

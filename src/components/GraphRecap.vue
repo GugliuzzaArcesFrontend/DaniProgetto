@@ -1,9 +1,10 @@
-<template>
+<!-- link e script dependecies prese dal sorgente di https://adminlte.io/themes/v3/ -->
+ <template>
     <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="card-title">Monthly Recap Report</h5>
+                    <h5 class="card-title">Monthly Recap Report (Dashboard v2)</h5>
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
                             <i class="fas fa-minus"></i>
