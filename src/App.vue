@@ -18,7 +18,7 @@
   <!--   <button @click="onClickDateNow($event)" >Data di oggi</button>
     <button @click="onClickChangeColor($event)" >CambiaColore</button>
  -->
-    <ChartArea title="Grafico ad area"/>
+    <ChartPie/>
     
   </main>
 </template>
@@ -26,11 +26,13 @@
 <script >
 
 import ChartArea from './components/ChartArea.vue';
+import ChartPie from './components/ChartPie.vue';
 
 export default {
   name: 'App',
   components: {
-    ChartArea
+    ChartArea,
+    ChartPie
   },
   data() {
     return {

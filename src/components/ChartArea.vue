@@ -1,5 +1,4 @@
 <template>
-    <!-- Grafico area -->
     <div class="card card-primary col-6" :class="cardSize">
         <div class="card-header">
             <h3 class="card-title">{{ title }}</h3>
@@ -41,7 +40,7 @@ export default {
     data() {
         return {
             cardStyle: String,
-            cardSize:String 
+            cardSize: ""
         }
     },
     methods: {
