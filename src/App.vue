@@ -18,21 +18,21 @@
   <!--   <button @click="onClickDateNow($event)" >Data di oggi</button>
     <button @click="onClickChangeColor($event)" >CambiaColore</button>
  -->
-    <ChartPie/>
-    
+    <CardReport/>
+    <InfoboxSmall/>
   </main>
 </template>
 
 <script >
 
-import ChartArea from './components/ChartArea.vue';
-import ChartPie from './components/ChartPie.vue';
+import CardReport from './components/CardReport.vue';
+import InfoboxSmall from './components/InfoboxSmall.vue';
 
 export default {
   name: 'App',
   components: {
-    ChartArea,
-    ChartPie
+    CardReport,
+    InfoboxSmall
   },
   data() {
     return {

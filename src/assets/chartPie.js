@@ -4,7 +4,7 @@
     //- DONUT CHART -
     //-------------
     // Get context with jQuery - using jQuery's .get() method.
-    var donutChartCanvas = $('#donutChart').get(0).getContext('2d')
+    /* var donutChartCanvas = $('#donutChart').get(0).getContext('2d') */
     var donutData = {
         labels: [
             'Chrome',
@@ -27,16 +27,16 @@
     }
     //Create pie or douhnut chart
     // You can switch between pie and douhnut using the method below.
-    new Chart(donutChartCanvas, {
+    /* new Chart(donutChartCanvas, {
         type: 'doughnut',
         data: donutData,
         options: donutOptions
-    })
+    }) */
 
     //- PIE CHART -
     //-------------
     // Get context with jQuery - using jQuery's .get() method.
-    var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
+    /* var pieChartCanvas = $('#pieChart').get(0).getContext('2d') */
     var pieData = donutData;
     var pieOptions = {
         maintainAspectRatio: false,
@@ -44,9 +44,9 @@
     }
     //Create pie or douhnut chart
     // You can switch between pie and douhnut using the method below.
-    new Chart(pieChartCanvas, {
+   /*  new Chart(pieChartCanvas, {
         type: 'pie',
         data: pieData,
-        options: pieOptions
-    })
-export {pieChartCanvas,donutData,pieOptions}
+        options: pieOptions 
+    })*/
+export {/* pieChartCanvas, */donutData,pieOptions}

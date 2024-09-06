@@ -1,15 +1,12 @@
 <template>
 
-    <div class="card card-warning">
+    <div class="card " :class="'card-warning'">
         <div class="card-header">
             <h3 class="card-title">Pie Chart</h3>
             <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                </button>
+                <ButtonMinimize/>
+                <ButtonMaximize/>
+                <ButtonClose/>
             </div>
         </div>
         <div class="card-body">
@@ -17,6 +14,7 @@
                 <div class="chartjs-size-monitor-expand">
                     <div class=""></div>
                 </div>
+
                 <div class="chartjs-size-monitor-shrink">
                     <div class=""></div>
                 </div>
@@ -30,17 +28,25 @@
 </template>
 <script>
 
-import { donutData, pieOptions } from '../assets/chartPie';
-import { Chart } from 'https://cdnjs.cloudflare.com/ajax/libs/vue-chartjs/5.3.1/index.js'
+/* import { donutData, pieOptions } from '../assets/chartPie';
+import { Chart } from 'chart.js'; */
+import ButtonClose from './ButtonClose.vue';
+import ButtonMaximize from './ButtonMaximize.vue';
+import ButtonMinimize from './ButtonMinimize.vue';
 
 export default {
     name: 'ChartPie',
+    components:{
+        ButtonMaximize,
+        ButtonMinimize,
+        ButtonClose
+    },
     data(){
         return{
             chart:null
         }
     },
-    methods:{
+    /* methods:{
         renderChart(){
             const canvas=this.$refs.pieChart.getContext('2d')
             this.chart= new Chart(canvas,{
@@ -55,7 +61,7 @@ export default {
     },
     mounted(){
         this.renderChart()
-    }
+    } */
 }
 </script>
 <style scoped></style>

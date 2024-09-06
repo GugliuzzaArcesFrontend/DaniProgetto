@@ -17,7 +17,9 @@
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
+    "chart.js": "^4.4.4",
     "flag-icons": "^7.2.3",
+    "jquery": "^3.7.1",
     "vue": "^3.4.29"
   },
   "devDependencies": {
