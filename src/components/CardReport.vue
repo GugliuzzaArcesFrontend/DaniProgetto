@@ -1,7 +1,7 @@
 <!-- dependency principale: adminlte -->
 <template>
-    <div class="card mt-0 mb-0" :class="placeholder">
-        <div class="card-header" :class="placeholder2">
+    <div class="card mt-0 " :class="[columnsClass,placeholder]">
+        <div class="card-header":class="placeholder2" ><!--  -->
             <slot>
                 <h3 class="card-title">{{ title }}</h3>
             </slot>
@@ -19,10 +19,8 @@
             </slot>
         </div>
 
-        <slot name=footer>
-            <div class="card-footer">
-                
-            </div>
+        <slot name="footer">
+            <div class="card-footer"></div>
         </slot>
 
     </div>
@@ -36,10 +34,7 @@ import ButtonRefresh from './ButtonRefresh.vue';
 export default {
     name: "CardReport",
     data() {
-        return {
-            placeholder: "",
-            placeholder2: "",
-            title: "Placeholder"
+        return {            
         }
     },
     components: {
@@ -47,6 +42,20 @@ export default {
         ButtonMaximize,
         ButtonMinimize,
         ButtonRefresh,
+    },
+    props:{
+        title:[String],
+        placeholder:[String],
+        placeholder2:[String],
+        bsSize:[String],
+        colNum:[String]
+    },
+    computed:{
+        columnsClass(){
+            if (this.colNum&&this.bsSize) return `col-${this.bsSize}-${this.colNum}`
+            else if(this.colNum) return `col-${this.colNum}`
+            else return ""
+        }
     }
 }
 </script>

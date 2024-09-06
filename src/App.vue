@@ -18,21 +18,23 @@
   <!--   <button @click="onClickDateNow($event)" >Data di oggi</button>
     <button @click="onClickChangeColor($event)" >CambiaColore</button>
  -->
-    <CardReport/>
-    <InfoboxSmall/>
+    <CardReport></CardReport> 
+    <InfoboxRecap/>
   </main>
 </template>
 
 <script >
 
 import CardReport from './components/CardReport.vue';
+import InfoboxRecap from './components/InfoboxRecap.vue';
 import InfoboxSmall from './components/InfoboxSmall.vue';
 
 export default {
   name: 'App',
   components: {
     CardReport,
-    InfoboxSmall
+    InfoboxSmall,
+    InfoboxRecap
   },
   data() {
     return {
