@@ -19,7 +19,7 @@
     <button @click="onClickChangeColor($event)" >CambiaColore</button>
  -->
     <InfoboxRecap/>
-    <CardReport class="mt-5"/>    
+    <CardReport />    
     
   </main>
 </template>

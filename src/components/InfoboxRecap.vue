@@ -1,12 +1,15 @@
 <template>
 
     <div class="row justify-content-between">
-        <InfoboxSmall class="col-12 col-md-5" icon='suitcase' color="success" title="Titolo infobox" value=37.5
-            maxValue=50 >
-        <template #tools><ButtonClose /></template>
+        <InfoboxSmall class="col-11 col-lg-5" icon='suitcase' color="success" title="Titolo infobox" :value="14"
+            :maxValue="50" >
+        <template #tools>
+            <ButtonMinimize class="bg-warning" />
+            <ButtonClose class="bg-danger" />
+        </template>
         </InfoboxSmall>
-        <InfoboxSmall class="col-12 col-md-5" isFull=true  color="danger" title="Titolo infobox2"
-            value="Cavoli amari" />
+        <InfoboxSmall class="col-11 col-lg-5" isFull=true  color="danger" title="Titolo infobox2"
+            :value="'Cavoli amari'" />
         <CardReport placeholder="card-danger" placeholder2="card-success" colNum="6" title="Wall-e regna">
             <template class="justify-content-center">Placeholder body con slot
                 <div class="row justify-content-between">
