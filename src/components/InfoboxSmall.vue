@@ -1,65 +1,82 @@
 <!-- link e script dependecies prese dal sorgente di https://adminlte.io/themes/v3/ -->
 <template>
-   
-    <div class="row"><span>Info boxes small</span>
-        <div class="col-lg-3 col-6">
-            <div class="small-box bg-info">
-                <div class="inner">
-                    <h3>150</h3>
-                    <p>New Orders</p>
-                </div>
-                <div class="icon">
-                    <i class="ion ion-bag"></i>
-                </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-        </div>
+    <!--     <div class="card-header">
+        
+    </div>
+     -->
+    <div class="info-box" :class="isFull ? colorClass : ''">
+        <span class="info-box-icon" :class="!isFull ? colorClass : ''">
+            <i :class="iconClass"></i>
+        </span>
 
-        <div class="col-lg-3 col-6">
-            <div class="small-box bg-success">
-                <div class="inner">
-                    <h3>53<sup style="font-size: 20px">%</sup></h3>
-                    <p>Bounce Rate</p>
-                </div>
-                <div class="icon">
-                    <i class="ion ion-stats-bars"></i>
-                </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
+        <div class="info-box-content">
+            <span class="info-box-text">{{ title }}</span>
+            <span v-if="valueType == 'number'" class="info-box-number">Valore: {{ value }}</span>
+            <span v-else class="info-box-text">Valore non numerico: {{ value }}</span>
         </div>
-
-        <div class="col-lg-3 col-6">
-            <div class="small-box bg-warning">
-                <div class="inner">
-                    <h3>44</h3>
-                    <p>User Registrations</p>
-                </div>
-                <div class="icon">
-                    <i class="ion ion-person-add"></i>
-                </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+        
+        <div v-if="maxValue" class="row">
+            <div class="progress">
+                <div class="progress-bar bg-info" :style="{ width: progressBar }"></div>
             </div>
+
+            <span class="progress-description">
+                {{ value / maxValue * 100 }}% Increase in 30 Days
+            </span>
         </div>
-
-        <div class="col-lg-3 col-6">
-            <div class="small-box bg-danger">
-                <div class="inner">
-                    <h3>65</h3>
-                    <p>Unique Visitors</p>
-                </div>
-                <div class="icon">
-                    <i class="ion ion-pie-graph"></i>
-                </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
+        <button @click="console.log('debug:' + typeof value + ' ' + value)">debug</button>
+        <div class="card-tools">
+            <slot name="tools"></slot>
         </div>
     </div>
 
 </template>
 
 <script>
+
 export default {
-    name: 'InfoboxSmall'
+    name: 'InfoboxSmall',
+    data() {
+        return {
+        }
+    },
+    props: {
+        color: {
+            type: String,
+            default: () => "info",
+        },
+        title: {
+            type: String,
+            default: () => "Default message",
+        },
+        icon: {
+            type: String,
+            default: () => "envelope",
+        },
+        value: {
+            type: Number,
+            default: () => 0
+        },
+        maxValue: {
+            default: () => null
+        },
+        isFull: false,
+    },
+    computed: {
+        iconClass() {
+            return `fas fa-${this.icon}`
+        },
+        colorClass() {
+            return `bg-${this.color}`
+        },
+        progressBar() {
+            return `${this.value / this.maxValue * 100}%`
+        },
+        valueType() {
+            if (typeof this.value === 'number') return 'number'
+        }
+
+    }
 }
 </script>
 

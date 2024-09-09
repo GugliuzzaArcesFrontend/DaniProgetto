@@ -18,8 +18,9 @@
   <!--   <button @click="onClickDateNow($event)" >Data di oggi</button>
     <button @click="onClickChangeColor($event)" >CambiaColore</button>
  -->
-    <CardReport></CardReport> 
     <InfoboxRecap/>
+    <CardReport class="mt-5"/>    
+    
   </main>
 </template>
 
@@ -68,7 +69,7 @@ export default {
 
 <style scoped>
 
-.red{
+/* .red{
   background-color: red;
 }
 
@@ -101,5 +102,5 @@ header {
     place-items: flex-start;
     flex-wrap: wrap;
   }
-}
+} */
 </style>
