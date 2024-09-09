@@ -1,39 +1,30 @@
 <template>
-    
-
     <div class="info-box" :class="isFull ? colorClass : ''">
-        <span class="info-box-icon" :class="!isFull ? colorClass : ''">
+        <span class="info-box-icon col-2" :class="!isFull ? colorClass : ''">
             <i :class="iconClass"></i>
         </span>
 
-        <div class="info-box-content">
+        <div class="info-box-content col-12" :class="infoBoxSize">
             <span class="info-box-text">{{ title }}</span>
-            <span v-if="valueType === 'number'" class="info-box-number">Valore: {{ value }}</span>
-            <span v-if="valueType === 'number'" class="info-box-number">Valore: {{ value }}</span>
+            <span v-if="typeof value === 'number'" class="info-box-number">Valore: {{ value }}</span>
             <span v-else class="info-box-text">Valore non numerico: {{ value }}</span>
         </div>
 
-        <div v-if="maxValue" >
-
-        <div v-if="maxValue" >
+        <div v-if="maxValue" class="col-6">
             <div class="progress">
                 <div class="progress-bar bg-info" :style="{ width: progressBar }"></div>
             </div>
 
             <span class="progress-description">
-                {{ progressBar }}% Increase in 30 Days
+                {{ progressBar }}% di {{ maxValue }}
             </span>
-
-
         </div>
 
         <!-- <div class="card-tools" style="float: right; display: block">
             <slot name="tools"></slot>
         </div> -->
         <!-- <button @click="console.log('debug:' + typeof value + ' ' + value)">debug</button> -->
-
     </div>
-
 </template>
 
 <script>
@@ -47,42 +38,41 @@ export default {
     props: {
         color: {
             type: String,
-            default: () => "info",
+            default: "bg-info",
         },
         title: {
             type: String,
-            default: () => "Default message",
+            default: "Default message",
         },
         icon: {
             type: String,
-            default: () => "envelope",
+            default: "fas fa-envelope",
         },
         value: {
-            type: [Number, String],
-            type: [Number, String],
-            default: () => 0
+            default: 0
         },
         maxValue: {
-            default: () => 0
-            default: () => 0
+            default: 0
         },
         isFull: false,
     },
     computed: {
         iconClass() {
-            return `fas fa-${this.icon}`
+            return `${this.icon}`
         },
         colorClass() {
-            return `bg-${this.color}`
+            return `${this.color}`
         },
         progressBar() {
-            return `${(this.value / this.maxValue).toFixed(2) * 100}%`
-            return `${(this.value / this.maxValue).toFixed(2) * 100}%`
+            return `${Math.floor(this.value / this.maxValue * 100)}%`
         },
         valueType() {
             return typeof this.value
-            return typeof this.value
+        },
+        infoBoxSize(){
+            return this.maxValue?'col-lg-4':'col-lg-10'
         }
+
 
     }
 }

@@ -1,22 +1,25 @@
 <template>
 
-    <div class="row justify-content-between">
-        <InfoboxSmall class="col-11 col-lg-5" icon='suitcase' color="success" title="Titolo infobox" :value="14"
-            :maxValue="50" >
-        <template #tools>
-            <ButtonMinimize class="bg-warning" />
-            <ButtonClose class="bg-danger" />
-        </template>
+    <div class="m-1 row justify-content-between">
+        <InfoboxSmall class="col-11 col-lg-5" icon='fas fa-suitcase' color="bg-success" title="Titolo infobox" :value="14"
+            :maxValue="50">
         </InfoboxSmall>
-        <InfoboxSmall class="col-11 col-lg-5" isFull=true  color="danger" title="Titolo infobox2"
+        <InfoboxSmall class="col-11 col-lg-5" isFull=true color="bg-danger" title="Titolo infobox2"
             :value="'Cavoli amari'" />
         <CardReport placeholder="card-danger" placeholder2="card-success" colNum="6" title="Wall-e regna">
-            <template class="justify-content-center">Placeholder body con slot
+            <template #body> Placeholder body con slot
                 <div class="row justify-content-between">
-
-                    <!-- <CardReport colNum="6"><template #tools><ButtonClose /></template></CardReport>
-<CardReport colNum="4"><template #tools><ButtonMinimize /><ButtonClose /></template></CardReport> -->
-
+                    <CardReport colNum="6">
+                        <template #tools>
+                            <ButtonClose />
+                        </template>
+                    </CardReport>
+                    <CardReport colNum="4">
+                        <template #tools>
+                            <ButtonMinimize />
+                            <ButtonClose />
+                        </template>
+                    </CardReport>
                 </div>
             </template>
 
@@ -29,8 +32,8 @@
                 <ButtonRefresh />
                 <ButtonClose />
             </template>
-
         </CardReport>
+
         <CardReport placeholder="card-warning" placeholder2="card-info" colNum="3" bsSize="sm"
             title="I hold the place" />
     </div>
@@ -56,4 +59,5 @@ export default {
     }
 }
 </script>
+
 <style scoped></style>

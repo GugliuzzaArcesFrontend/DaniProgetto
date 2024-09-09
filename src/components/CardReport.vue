@@ -12,7 +12,7 @@
         </div>
 
         <div class="card-body">
-            <slot >
+            <slot name="body">
                 Placeholder content
             </slot>
         </div>
