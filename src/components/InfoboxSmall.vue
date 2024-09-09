@@ -1,4 +1,5 @@
 <template>
+    
 
     <div class="info-box" :class="isFull ? colorClass : ''">
         <span class="info-box-icon" :class="!isFull ? colorClass : ''">
@@ -8,8 +9,11 @@
         <div class="info-box-content">
             <span class="info-box-text">{{ title }}</span>
             <span v-if="valueType === 'number'" class="info-box-number">Valore: {{ value }}</span>
+            <span v-if="valueType === 'number'" class="info-box-number">Valore: {{ value }}</span>
             <span v-else class="info-box-text">Valore non numerico: {{ value }}</span>
         </div>
+
+        <div v-if="maxValue" >
 
         <div v-if="maxValue" >
             <div class="progress">
@@ -19,6 +23,7 @@
             <span class="progress-description">
                 {{ progressBar }}% Increase in 30 Days
             </span>
+
 
         </div>
 
@@ -54,9 +59,11 @@ export default {
         },
         value: {
             type: [Number, String],
+            type: [Number, String],
             default: () => 0
         },
         maxValue: {
+            default: () => 0
             default: () => 0
         },
         isFull: false,
@@ -70,8 +77,10 @@ export default {
         },
         progressBar() {
             return `${(this.value / this.maxValue).toFixed(2) * 100}%`
+            return `${(this.value / this.maxValue).toFixed(2) * 100}%`
         },
         valueType() {
+            return typeof this.value
             return typeof this.value
         }
 
