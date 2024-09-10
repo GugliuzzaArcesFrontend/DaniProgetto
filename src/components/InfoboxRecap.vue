@@ -1,6 +1,6 @@
 <template>
 
-    <div class="m-1 row justify-content-around justify-content-md-between ">
+    <div class="row justify-content-around justify-content-md-between ">
         <CardReport colNum="12" title="Report settimanale" placeholder="card-primary">
             <template #body>
                 <InfoboxSmall class="col-11 col-md-5 col-xl-3" icon='fas fa-suitcase' color="bg-success" title="Titolo infobox"
@@ -9,10 +9,10 @@
                 <InfoboxSmall class="col-11 col-md-5 col-xl-3" isFull=true color="bg-danger" title="Titolo infobox2"
                     :value="'Cavoli amari'" />
 
-                <InfoboxSmall class="col-11 col-md-5 col-xl-3" icon='fas fa-suitcase' color="bg-info" title="Segnaposto numero caratteri alto blablablabla"
+                <InfoboxSmall class="col-11 col-md-5 col-xl-3"  color="bg-info" title="Segnaposto numero caratteri alto blablablabla"
                     :value="25" />
 
-                <InfoboxSmall class="col-11 col-md-5 col-xl-3" icon='fas fa-suitcase' color="bg-success" title="Quarta infobox"
+                <InfoboxSmall class="col-11 col-md-5 col-xl-3" icon='fas fa-gear' color="bg-success" title="Quarta infobox"
                     isFull=true :value="'Info breve'" />
             </template>
 
@@ -21,7 +21,6 @@
                 <ButtonMaximize />
             </template>
         </CardReport>
-
 
         <CardReport placeholder="card-danger mb-0" placeholder2="bg-secondary m-1 mt-0" colNum="6" title="Wall-e regna">
             <template #body> Placeholder body con slot

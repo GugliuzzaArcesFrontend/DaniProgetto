@@ -1,10 +1,10 @@
 <template>
     <div class="info-box" :class="[isFull ? color : '']">
-        <span class="info-box-icon col-2" :class="[!isFull ? color : '']">
+        <span class="info-box-icon" :class="[!isFull ? color : '']">
             <i :class="icon"></i>
         </span>
 
-        <div class="info-box-content col-12" :class="infoBoxSize">
+        <div class="info-box-content" :class="infoBoxSize">
             <span class="info-box-text">{{ title }}</span>
             <span v-if="typeof value === 'number'" class="info-box-number">Valore: {{ value }}</span>
             <span v-else class="info-box-text">Valore non numerico: {{ value }}</span>

@@ -25,15 +25,13 @@
 
 <script >
 
-import CardReport from './components/CardReport.vue';
+
 import InfoboxRecap from './components/InfoboxRecap.vue';
-import InfoboxSmall from './components/InfoboxSmall.vue';
+
 
 export default {
   name: 'App',
   components: {
-    CardReport,
-    InfoboxSmall,
     InfoboxRecap
   },
   data() {
