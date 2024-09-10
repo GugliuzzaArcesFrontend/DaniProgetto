@@ -1,7 +1,7 @@
 <template>
-    <div class="info-box" :class="isFull ? colorClass : ''">
-        <span class="info-box-icon col-2" :class="!isFull ? colorClass : ''">
-            <i :class="iconClass"></i>
+    <div class="info-box" :class="[isFull ? color : '']">
+        <span class="info-box-icon col-2" :class="[!isFull ? color : '']">
+            <i :class="icon"></i>
         </span>
 
         <div class="info-box-content col-12" :class="infoBoxSize">
@@ -57,12 +57,6 @@ export default {
         isFull: false,
     },
     computed: {
-        iconClass() {
-            return `${this.icon}`
-        },
-        colorClass() {
-            return `${this.color}`
-        },
         progressBar() {
             return `${Math.floor(this.value / this.maxValue * 100)}%`
         },
@@ -72,8 +66,6 @@ export default {
         infoBoxSize(){
             return this.maxValue?'col-lg-4':'col-lg-10'
         }
-
-
     }
 }
 </script>

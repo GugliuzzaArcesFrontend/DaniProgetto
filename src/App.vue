@@ -18,8 +18,7 @@
   <!--   <button @click="onClickDateNow($event)" >Data di oggi</button>
     <button @click="onClickChangeColor($event)" >CambiaColore</button>
  -->
-    <InfoboxRecap/>
-    <CardReport />    
+    <InfoboxRecap/> 
     
   </main>
 </template>

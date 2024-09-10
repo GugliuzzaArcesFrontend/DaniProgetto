@@ -1,12 +1,29 @@
 <template>
 
-    <div class="m-1 row justify-content-between">
-        <InfoboxSmall class="col-11 col-lg-5" icon='fas fa-suitcase' color="bg-success" title="Titolo infobox" :value="14"
-            :maxValue="50">
-        </InfoboxSmall>
-        <InfoboxSmall class="col-11 col-lg-5" isFull=true color="bg-danger" title="Titolo infobox2"
-            :value="'Cavoli amari'" />
-        <CardReport placeholder="card-danger" placeholder2="card-success" colNum="6" title="Wall-e regna">
+    <div class="m-1 row justify-content-around justify-content-md-between ">
+        <CardReport colNum="12" title="Report settimanale" placeholder="card-primary">
+            <template #body>
+                <InfoboxSmall class="col-11 col-md-5 col-xl-3" icon='fas fa-suitcase' color="bg-success" title="Titolo infobox"
+                    :value="14" :maxValue="50" />
+
+                <InfoboxSmall class="col-11 col-md-5 col-xl-3" isFull=true color="bg-danger" title="Titolo infobox2"
+                    :value="'Cavoli amari'" />
+
+                <InfoboxSmall class="col-11 col-md-5 col-xl-3" icon='fas fa-suitcase' color="bg-info" title="Segnaposto numero caratteri alto blablablabla"
+                    :value="25" />
+
+                <InfoboxSmall class="col-11 col-md-5 col-xl-3" icon='fas fa-suitcase' color="bg-success" title="Quarta infobox"
+                    isFull=true :value="'Info breve'" />
+            </template>
+
+            <template #tools>
+                <ButtonMinimize />
+                <ButtonMaximize />
+            </template>
+        </CardReport>
+
+
+        <CardReport placeholder="card-danger mb-0" placeholder2="bg-secondary m-1 mt-0" colNum="6" title="Wall-e regna">
             <template #body> Placeholder body con slot
                 <div class="row justify-content-between">
                     <CardReport colNum="6">
@@ -14,6 +31,7 @@
                             <ButtonClose />
                         </template>
                     </CardReport>
+
                     <CardReport colNum="4">
                         <template #tools>
                             <ButtonMinimize />
@@ -24,7 +42,7 @@
             </template>
 
             <!-- non si possono affiggere attributi all'elemento template #destinazione -->
-            <template #footer class="test"></template>
+            <template #footer ></template>
 
             <template #tools>
                 <ButtonMinimize />
@@ -34,8 +52,11 @@
             </template>
         </CardReport>
 
-        <CardReport placeholder="card-warning" placeholder2="card-info" colNum="3" bsSize="sm"
-            title="I hold the place" />
+        <CardReport placeholder="card-warning" placeholder2="card-info" colNum="3" bsSize="sm" title="I hold the place">
+            <template #tools>
+                <ButtonClose />
+            </template>
+        </CardReport>
     </div>
 </template>
 
