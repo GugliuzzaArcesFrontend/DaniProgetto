@@ -1,14 +1,13 @@
 <template>
-    <div class="info-box row justify-content-between col-11 col-md-5 col-xl-3" :class="[isFull ? color : '']">
+    <div class="info-box row justify-content-between mx-0 col-11 col-md-5 col-xl-3" :class="[isFull ? color : '']">
         <span class="info-box-icon col-2" :class="[!isFull ? color : '']">
-            <i :class="icon"></i>
+            <i :class="[icon,iconColor]"></i>
         </span>
 
         <div class="info-box-content col" >
             <span class="info-box-text">{{ title }}</span>
             <span v-if="typeof value === 'number'" class="info-box-number">{{ valueName }}: {{ value }}</span>
             <span v-else class="info-box-text">{{ valueName }}: {{ value }}</span>
-
         </div>
 
         <div v-if="maxValue" class="ms-auto col-4 align-self-center">
@@ -37,7 +36,7 @@ export default {
     props: {
         color: {
             type: String,
-            default: "bg-info",
+            default: "",
         },
         colorBar: {
             type: String,
@@ -51,6 +50,9 @@ export default {
             type: String,
             default: "fas fa-envelope",
         },
+        iconColor:{
+            type: String,
+            default: ""},
         value: {
             type: [String, Number],
             default: ""
@@ -76,11 +78,10 @@ export default {
         valueType() {
             return typeof this.value
         },
-        infoBoxSize() {
-            return this.maxValue ? 'col' : 'col-lg-10'
-        }
+        
     }
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>

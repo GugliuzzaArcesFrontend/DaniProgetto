@@ -10,7 +10,11 @@ export default {
         minimizeCard(){
             
         }
-    }
+    },
+    mounted() {
+    // Avvia il plugin AdminLTE per gestire la card
+    $('[data-card-widget="collapse"]').CardWidget();
+  }
 }
 </script>
 <style scoped></style>

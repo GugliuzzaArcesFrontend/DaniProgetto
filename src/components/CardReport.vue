@@ -1,6 +1,6 @@
 <!-- dependency principale: adminlte -->
 <template>
-    <div class="container card mt-0 " :class="[columnsClass, colorCard]">
+    <div class="container card mt-0" :class="[columnsClass, colorCard]">
         <div class="card-header " ><!--  -->
             <slot name="header">
                 <h3 class="card-title">{{ title }}</h3>
@@ -48,3 +48,8 @@ export default {
     }
 }
 </script>
+<style scoped>
+/* .card-body {
+    display: flex !important;
+} */
+</style>

@@ -13,19 +13,18 @@
   </header>
 
   <main>
-    <!--   <button @click="onClickDateNow($event)" >Data di oggi</button>
-    <button @click="onClickChangeColor($event)" >CambiaColore</button>
- -->
-    <!-- <InfoboxRecap/>  -->
+    <Card title="Ciao" cardColor="info" label="Urgente" labelColor="danger" >
+      <InfoboxSmall icon='fas fa-suitcase' title="Report contatti" :value="14" iconColor="text-danger"
+        valueName="Conversioni" :maxValue="32" />
 
-    <!-- <TableFixedHeader isExpandable="true">
-      <template #tools>
-        <ToolSearchBar/>
-      </template>
-</TableFixedHeader> -->
-    <InfoboxRecap />
-    <Card title="Ciao" cardClass="card-primary" label="Urgente" labelColor="badge-danger">
-      <p>Pazienza ci vuole nella vita</p>
+      <InfoboxSmall isFull=true color="bg-danger" title="Titolo infobox2" valueName="Situazione" :value="'Cavoli amari'"
+        hasFooter=true />
+
+      <InfoboxSmall color="bg-info" title="Segnaposto numero caratteri alto blablablabla" valuename="Caratteri"
+        :value="Infinity" />
+
+      <InfoboxSmall icon='fas fa-gear' color="bg-success" title="Altra informativa" valueName="Informazione"
+        :isFull=true :value="'Info'" />
       <template #tools>
         <ButtonMinimize />
 
@@ -36,7 +35,8 @@
         <p>Footer</p>
       </template>
     </Card>
-    <Card title="Ciao" cardClass="bg-info"  labelColor="badge-danger">
+    <Card title='test'cardSizes="10"/>
+    <Card title="Ciao" cardType="gradient" cardColor="warning" labelColor="badge-danger">
       <p>placeholder</p>
 
       <template #tools>
@@ -53,7 +53,7 @@
 import ButtonClose from './components/ButtonClose.vue';
 import ButtonMinimize from './components/ButtonMinimize.vue';
 import Card from './components/Card.vue';
-import InfoboxRecap from './components/InfoboxRecap.vue';
+import InfoboxSmall from './components/InfoboxSmall.vue';
 import TableFixedHeader from './components/TableFixedHeader.vue';
 import ToolSearchBar from './components/ToolSearchBar.vue';
 
@@ -61,7 +61,7 @@ import ToolSearchBar from './components/ToolSearchBar.vue';
 export default {
   name: 'App',
   components: {
-    InfoboxRecap,
+    InfoboxSmall,
     TableFixedHeader,
     ToolSearchBar,
     Card,
@@ -70,6 +70,7 @@ export default {
   },
   data() {
     return {
+      sizes:['11','sm-5','lg-3'],
       datetime: null,
       color: true,
     }
