@@ -1,6 +1,6 @@
 <!-- dependency principale: adminlte -->
 <template>
-    <div class="container card mt-0 " :class="[columnsClass, placeholder]">
+    <div class="container card mt-0 " :class="[columnsClass, colorCard]">
         <div class="card-header " ><!--  -->
             <slot name="header">
                 <h3 class="card-title">{{ title }}</h3>
@@ -18,7 +18,6 @@
             <div class="col-12"></div>
         </div>
 
-
         <slot name="footer">
             <div  class="card-footer"></div>
         </slot>
@@ -35,7 +34,7 @@ export default {
     },
     props: {
         title: [String],
-        placeholder: [String],
+        colorCard: [String],
         placeholder2: [String],
         bsSize: [String],
         colNum: [String]

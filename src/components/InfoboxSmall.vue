@@ -1,29 +1,28 @@
 <template>
-    <div class="info-box" :class="[isFull ? color : '']">
-        <span class="info-box-icon" :class="[!isFull ? color : '']">
+    <div class="info-box row justify-content-between col-11 col-md-5 col-xl-3" :class="[isFull ? color : '']">
+        <span class="info-box-icon col-2" :class="[!isFull ? color : '']">
             <i :class="icon"></i>
         </span>
 
-        <div class="info-box-content" :class="infoBoxSize">
+        <div class="info-box-content col" >
             <span class="info-box-text">{{ title }}</span>
-            <span v-if="typeof value === 'number'" class="info-box-number">Valore: {{ value }}</span>
-            <span v-else class="info-box-text">Valore non numerico: {{ value }}</span>
+            <span v-if="typeof value === 'number'" class="info-box-number">{{ valueName }}: {{ value }}</span>
+            <span v-else class="info-box-text">{{ valueName }}: {{ value }}</span>
+
         </div>
 
-        <div v-if="maxValue" class="col-6">
-            <div class="progress">
-                <div class="progress-bar bg-info" :style="{ width: progressBar }"></div>
+        <div v-if="maxValue" class="ms-auto col-4 align-self-center">
+            <p>Tasso di {{ valueName.toLowerCase() }}</p>
+            <div class="progress ">
+                <div class="progress-bar" :class="colorBar" :style="{ width: progressBar }"></div>
             </div>
 
             <span class="progress-description">
-                {{ progressBar }}% di {{ maxValue }}
+                {{ progressBar }} di {{ maxValue }}
             </span>
         </div>
-
-        <!-- <div class="card-tools" style="float: right; display: block">
-            <slot name="tools"></slot>
-        </div> -->
-        <!-- <button @click="console.log('debug:' + typeof value + ' ' + value)">debug</button> -->
+        
+        <a v-if="footerLink" class="small-box-footer" :href="footerLink"></a>
     </div>
 </template>
 
@@ -40,6 +39,10 @@ export default {
             type: String,
             default: "bg-info",
         },
+        colorBar: {
+            type: String,
+            default: "bg-dark",
+        },
         title: {
             type: String,
             default: "Default message",
@@ -49,12 +52,22 @@ export default {
             default: "fas fa-envelope",
         },
         value: {
-            default: 0
+            type: [String, Number],
+            default: ""
+        },
+        valueName: {
+            type: String,
+            default: "Valore"
         },
         maxValue: {
             default: 0
         },
+        footerLink: {
+            type: String,
+            default: "#"
+        },
         isFull: false,
+        hasFooterLink: false,
     },
     computed: {
         progressBar() {
@@ -63,8 +76,8 @@ export default {
         valueType() {
             return typeof this.value
         },
-        infoBoxSize(){
-            return this.maxValue?'col-lg-4':'col-lg-10'
+        infoBoxSize() {
+            return this.maxValue ? 'col' : 'col-lg-10'
         }
     }
 }

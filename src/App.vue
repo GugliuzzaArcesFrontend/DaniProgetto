@@ -1,5 +1,3 @@
-
-
 <template>
   <header>
     <!-- <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
@@ -15,24 +13,60 @@
   </header>
 
   <main>
-  <!--   <button @click="onClickDateNow($event)" >Data di oggi</button>
+    <!--   <button @click="onClickDateNow($event)" >Data di oggi</button>
     <button @click="onClickChangeColor($event)" >CambiaColore</button>
  -->
-    <InfoboxRecap/> 
-    
+    <!-- <InfoboxRecap/>  -->
+
+    <!-- <TableFixedHeader isExpandable="true">
+      <template #tools>
+        <ToolSearchBar/>
+      </template>
+</TableFixedHeader> -->
+    <InfoboxRecap />
+    <Card title="Ciao" cardClass="card-primary" label="Urgente" labelColor="badge-danger">
+      <p>Pazienza ci vuole nella vita</p>
+      <template #tools>
+        <ButtonMinimize />
+
+        <ButtonClose />
+      </template>
+
+      <template #footer>
+        <p>Footer</p>
+      </template>
+    </Card>
+    <Card title="Ciao" cardClass="bg-info"  labelColor="badge-danger">
+      <p>placeholder</p>
+
+      <template #tools>
+        <ButtonMinimize />
+        <ButtonClose />
+      </template>
+    </Card>
   </main>
 </template>
 
-<script >
+<script>
 
 
+import ButtonClose from './components/ButtonClose.vue';
+import ButtonMinimize from './components/ButtonMinimize.vue';
+import Card from './components/Card.vue';
 import InfoboxRecap from './components/InfoboxRecap.vue';
+import TableFixedHeader from './components/TableFixedHeader.vue';
+import ToolSearchBar from './components/ToolSearchBar.vue';
 
 
 export default {
   name: 'App',
   components: {
-    InfoboxRecap
+    InfoboxRecap,
+    TableFixedHeader,
+    ToolSearchBar,
+    Card,
+    ButtonMinimize,
+    ButtonClose,
   },
   data() {
     return {
@@ -41,23 +75,23 @@ export default {
     }
   },
   methods: {
-    onClickDateNow(e){
-      console.log('evento:',e)
+    onClickDateNow(e) {
+      console.log('evento:', e)
       this.datetime = Date.now();
     },
-    onClickChangeColor(e){
-      this.color=!this.color;
+    onClickChangeColor(e) {
+      this.color = !this.color;
     },
-    formattedDatetime(time='1900-01-01 00:00:00') {
+    formattedDatetime(time = '1900-01-01 00:00:00') {
       return new Date(time).toLocaleString();
     }
   },
-  computed:{
-    dataOggi(){
+  computed: {
+    dataOggi() {
       return this.formattedDatetime(this.datetime);
     }
   },
-  mounted(){
+  mounted() {
     this.datetime = '1988-10-24 00:00:00';
   }
 }
@@ -65,7 +99,6 @@ export default {
 </script>
 
 <style scoped>
-
 /* .red{
   background-color: red;
 }

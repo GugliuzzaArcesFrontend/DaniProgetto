@@ -6,6 +6,11 @@
 <script>
 export default {
     name: "ButtonMinimize"
+    , methods: {
+        minimizeCard(){
+            
+        }
+    }
 }
 </script>
 <style scoped></style>

@@ -1,19 +1,19 @@
 <template>
 
-    <div class="row justify-content-around justify-content-md-between ">
-        <CardReport colNum="12" title="Report settimanale" placeholder="card-primary">
+    <div class="row ">
+        <CardReport colNum="12" title="Report settimanale" colorCard="card-primary">
             <template #body>
-                <InfoboxSmall class="col-11 col-md-5 col-xl-3" icon='fas fa-suitcase' color="bg-success" title="Titolo infobox"
-                    :value="14" :maxValue="50" />
+                <InfoboxSmall icon='fas fa-suitcase' color="bg-success"
+                    title="Report contatti" :value="14" valueName="Conversioni" :maxValue="32" />
 
-                <InfoboxSmall class="col-11 col-md-5 col-xl-3" isFull=true color="bg-danger" title="Titolo infobox2"
-                    :value="'Cavoli amari'" />
+                <InfoboxSmall isFull=true color="bg-danger" title="Titolo infobox2"
+                    valueName="Situazione" :value="'Cavoli amari'" hasFooter=true />
 
-                <InfoboxSmall class="col-11 col-md-5 col-xl-3"  color="bg-info" title="Segnaposto numero caratteri alto blablablabla"
-                    :value="25" />
+                <InfoboxSmall color="bg-info"
+                    title="Segnaposto numero caratteri alto blablablabla" valuename="Caratteri" :value="NaN" />
 
-                <InfoboxSmall class="col-11 col-md-5 col-xl-3" icon='fas fa-gear' color="bg-success" title="Quarta infobox"
-                    isFull=true :value="'Info breve'" />
+                <InfoboxSmall icon='fas fa-gear' color="bg-success"
+                    title="Altra informativa" valueName="Informazione" :isFull=true :value="'Info'" />
             </template>
 
             <template #tools>
@@ -22,7 +22,7 @@
             </template>
         </CardReport>
 
-        <CardReport placeholder="card-danger mb-0" placeholder2="bg-secondary m-1 mt-0" colNum="6" title="Wall-e regna">
+        <!-- <CardReport colorCard="card-danger mb-0" placeholder2="bg-secondary m-1 mt-0" colNum="6" title="Wall-e regna">
             <template #body> Placeholder body con slot
                 <div class="row justify-content-between">
                     <CardReport colNum="6">
@@ -40,9 +40,6 @@
                 </div>
             </template>
 
-            <!-- non si possono affiggere attributi all'elemento template #destinazione -->
-            <template #footer ></template>
-
             <template #tools>
                 <ButtonMinimize />
                 <ButtonMaximize />
@@ -51,11 +48,11 @@
             </template>
         </CardReport>
 
-        <CardReport placeholder="card-warning" placeholder2="card-info" colNum="3" bsSize="sm" title="I hold the place">
+        <CardReport colorCard="card-warning" placeholder2="card-info" colNum="3" bsSize="sm" title="I hold the place">
             <template #tools>
                 <ButtonClose />
             </template>
-        </CardReport>
+        </CardReport> -->
     </div>
 </template>
 
