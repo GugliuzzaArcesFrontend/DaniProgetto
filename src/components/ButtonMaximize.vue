@@ -7,11 +7,7 @@
 
 <script>
 export default {
-    name: 'ButtonMaximize',
-    mounted() {
-    // Avvia il plugin AdminLTE per gestire la card
-    $('[data-card-widget="collapse"]').CardWidget();
-  }
+    name: 'ButtonMaximize',    
 }
 </script>
 <style scoped></style>

@@ -1,5 +1,5 @@
 <template>
-    <div class="info-box mx-0 row justify-content-between col-11 col-md-5 col-xl-3" :class="[isFull ? color : '']">
+    <div class="info-box m-0 mb-2 row aling-items-center justify-content-between" :class="[sizeClass,isFull ? color : '']">
         <span class="info-box-icon col-2" :class="[!isFull ? color : '']">
             <i :class="[icon,iconColor]"></i>
         </span>
@@ -20,6 +20,9 @@
                 {{ progressBar }} di {{ maxValue }}
             </span>
         </div>        
+        <div v-if=isLoading class="overlay"><!-- segnaposto per grafica e condizione di attesa/caricamento -->
+            <i class="fas fa-2x fa-sync-alt fa-spin"></i>
+        </div>
     </div>
 </template>
 
@@ -29,6 +32,7 @@ export default {
     name: 'InfoboxSmall',
     data() {
         return {
+            isLoading: false
         }
     },
     props: {
@@ -59,12 +63,21 @@ export default {
             type: String,
             default: "Valore"
         },
+        boxSizes: {
+            type: [String, Number, Array],  //accetta un array di classi o una singola bootstrap, tolta la dicitura "col-", i.e.: ['11','sm-5','lg-3'],
+            default: ['11',]
+        },
         maxValue: {
             default: 0
         },
         isFull: false,
     },
     computed: {
+        sizeClass(){
+            if (typeof this.boxSizes === 'object') return this.boxSizes.map(size => "col-" + size).join(" ")
+            else if (typeof this.boxSizes === "string" || typeof this.boxSizes === "number") return "col-" + this.boxSizes
+            else return "col"
+        },
         progressBar() {
             return `${Math.floor(this.value / this.maxValue * 100)}%`
         },

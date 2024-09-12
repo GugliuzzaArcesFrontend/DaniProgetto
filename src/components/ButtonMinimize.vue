@@ -1,6 +1,7 @@
 <template>
-    <button @click="toggleCollapse" type="button" class="btn btn-tool"><!-- data-card-widget="collapse" -->
-        <i class="fas fa-minus"></i>
+    <button @click="toggleCollapse" type="button" class="btn btn-tool">
+        <i v-if="!isCollapsed" class='fas fa-minus'></i>
+        <i v-else class='fas fa-plus'></i>
     </button>
 </template>
 <script>

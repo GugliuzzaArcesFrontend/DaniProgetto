@@ -1,5 +1,5 @@
 <template>
-    <div class="card" :class="[cardClass, cardSize, {'collapsed-card':isCollapsed}]">
+    <div class="card" :class="[cardClass, cardSize, { 'collapsed-card': isCollapsed }]">
         <div class="card-header">
             <h3 class="card-title">{{ title }}</h3>
 
@@ -9,12 +9,15 @@
             </div>
         </div>
 
-        <div class="card-body m-auto row justify-content-center justify-content-md-around">
+        <div class="card-body row justify-content-center justify-content-md-between">
             <slot></slot>
         </div>
 
         <div class="card-footer">
             <slot name="footer"></slot>
+        </div>
+        <div v-if=isLoading class="overlay"><!-- segnaposto per grafica e condizione di attesa/caricamento -->
+            <i class="fas fa-2x fa-sync-alt fa-spin"></i>
         </div>
     </div>
 </template>
@@ -24,7 +27,8 @@ export default {
     name: "Card",
     data() {
         return {
-            isCollapsed: false
+            isCollapsed: false,
+            isLoading: false
         }
     },
     props: {
@@ -59,11 +63,11 @@ export default {
             }
         },
         cardSize() {
-            if (typeof this.cardSizes === 'array') return this.cardSizes.map(size => "col-" + size).join(" ")
+            if (typeof this.cardSizes === 'object') return this.cardSizes.map(size => "col-" + size).join(" ")
             else if (typeof this.cardSizes === "string" || typeof this.cardSizes === "number") return "col-" + this.cardSizes
             else return "col"
         },
-        labelClass(){
+        labelClass() {
             return `badge badge-${this.labelColor}`
         },
     },

@@ -13,29 +13,46 @@
   </header>
 
   <main>
-    <Card title="Ciao" cardType="outline" cardColor="danger" label="Urgente" labelColor="danger">
-      <Infobox icon='fas fa-suitcase' title="Report contatti" :value="14" iconColor="text-danger"
-        valueName="Conversioni" :maxValue="32" />
-
-      <Infobox isFull=true color="bg-danger" title="Titolo infobox2" valueName="Situazione" :value="'Cavoli amari'" />
-
-      <Infobox color="bg-info" title="Segnaposto numero caratteri alto blablablabla" valuename="Caratteri"
-        :value="Infinity" />
-
-      <Infobox icon='fas fa-gear' color="bg-success" title="Altra informativa" valueName="Informazione"
-        :value="'Info'"  />
+    <Card title="Master" cardType="outline" cardColor="primary" label="Main" labelColor="danger">
       <template #tools>
         <ButtonMinimize />
-
-        <ButtonClose />
       </template>
+      <Card title="Child" cardType="outline" cardColor="danger" label="Urgente" labelColor="danger">
+        <template #tools>
+          <ButtonMinimize />
+          <ButtonMaximize />
 
-      <template #footer>
-        <p>Footer</p>
-      </template>
+          <ButtonClose />
+        </template>
+
+        <template #footer>
+          <p>Footer</p>
+        </template>
+
+        <Infobox icon='fas fa-suitcase' :boxSizes=sizes title="Report contatti" :value="14" iconColor="text-info"
+          valueName="Conversioni" :maxValue="32" />
+
+        <Infobox isFull=true :boxSizes=sizes color="bg-danger" title="Titolo infobox2" valueName="Situazione"
+          :value="'Cavoli amari'" />
+
+        <Infobox color="bg-info" :boxSizes=sizes title="Segnaposto numero caratteri alto blablablabla"
+          valuename="Caratteri" :value="Infinity" />
+
+        <Infobox icon='fas fa-gear' :boxSizes=sizes color="bg-success" title="Altra informativa"
+          valueName="Informazione" :value="'Info'" />
+      </Card><div class="w-100" />
+      <Card title="Child con smallbox" cardColor="info">
+        <template #tools><ButtonMinimize /><ButtonMaximize /><ButtonClose /></template>
+        <SmallBox :boxSizes=sizes icon='fas fa-suitcase' description="Sopralluoghi" :value="14"
+          iconColor="text-success" />
+        <SmallBox :boxSizes=sizes icon='fas fa-suitcase' description="Sopralluoghi" :value="14" iconColor="text-info" />
+        <SmallBox :boxSizes=sizes icon='fas fa-suitcase' description="Sopralluoghi" :value="14"
+          iconColor="text-success" />
+        <SmallBox :boxSizes=sizes icon='fas fa-suitcase' description="Sopralluoghi" :value="14"
+          iconColor="text-success" />
+      </Card><div class="w-100" />
+      <CheckList />
     </Card>
-    <SmallBox />
-
   </main>
 </template>
 
@@ -43,8 +60,10 @@
 
 
 import ButtonClose from './components/ButtonClose.vue';
+import ButtonMaximize from './components/ButtonMaximize.vue';
 import ButtonMinimize from './components/ButtonMinimize.vue';
 import Card from './components/Card.vue';
+import CheckList from './components/CheckList.vue';
 import Infobox from './components/Infobox.vue';
 import SmallBox from './components/SmallBox.vue';
 import TableFixedHeader from './components/TableFixedHeader.vue';
@@ -54,17 +73,19 @@ import ToolSearchBar from './components/ToolSearchBar.vue';
 export default {
   name: 'App',
   components: {
+    ButtonClose,
+    ButtonMaximize,
+    ButtonMinimize,
+    Card,
+    CheckList,
     Infobox,
+    SmallBox,
     TableFixedHeader,
     ToolSearchBar,
-    Card,
-    ButtonMinimize,
-    ButtonClose,
-    SmallBox
   },
   data() {
     return {
-      sizes: ['11', 'sm-5', 'lg-3'],
+      sizes: ['11', 'sm-6', 'lg-3'],
       datetime: null,
       color: true,
     }
