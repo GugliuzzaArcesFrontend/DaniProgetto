@@ -16,17 +16,13 @@
     <Card title="Master" cardType="outline" cardColor="primary" label="Main" labelColor="danger">
       <template #tools>
         <ButtonMinimize />
+        <ButtonMaximize />
+        <ButtonClose />
       </template>
       <Card title="Child" cardType="outline" cardColor="danger" label="Urgente" labelColor="danger">
         <template #tools>
           <ButtonMinimize />
-          <ButtonMaximize />
-
           <ButtonClose />
-        </template>
-
-        <template #footer>
-          <p>Footer</p>
         </template>
 
         <Infobox icon='fas fa-suitcase' :boxSizes=sizes title="Report contatti" :value="14" iconColor="text-info"
@@ -40,9 +36,14 @@
 
         <Infobox icon='fas fa-gear' :boxSizes=sizes color="bg-success" title="Altra informativa"
           valueName="Informazione" :value="'Info'" />
-      </Card><div class="w-100" />
+      </Card>
+      <div class="w-100" />
+
       <Card title="Child con smallbox" cardColor="info">
-        <template #tools><ButtonMinimize /><ButtonMaximize /><ButtonClose /></template>
+        <template #tools>
+          <ButtonMinimize />
+          <ButtonClose />
+        </template>
         <SmallBox :boxSizes=sizes icon='fas fa-suitcase' description="Sopralluoghi" :value="14"
           iconColor="text-success" />
         <SmallBox :boxSizes=sizes icon='fas fa-suitcase' description="Sopralluoghi" :value="14" iconColor="text-info" />
@@ -50,8 +51,11 @@
           iconColor="text-success" />
         <SmallBox :boxSizes=sizes icon='fas fa-suitcase' description="Sopralluoghi" :value="14"
           iconColor="text-success" />
-      </Card><div class="w-100" />
-      <CheckList />
+      </Card>
+      <div class="w-100" />
+
+      <CheckList :list="list" />
+
     </Card>
   </main>
 </template>
@@ -88,6 +92,24 @@ export default {
       sizes: ['11', 'sm-6', 'lg-3'],
       datetime: null,
       color: true,
+      list: [
+        {
+          id: 1,
+          todo: "todo1",
+          state: true,
+          task: "Design a nice theme",
+          time: "2 mins",
+          dueDate: "13/09/2024 12:00"
+        },
+        {
+          id: 2,
+          todo: "todo2",
+          state: true,
+          task: "Make the theme responsive",
+          time: "4 hours",
+          dueDate: "16/09/2024 10:00"
+        }
+      ]
     }
   },
   methods: {

@@ -1,6 +1,6 @@
 <template>
-    <div class="info-box m-0 mb-2 row aling-items-center justify-content-between" :class="[sizeClass,isFull ? color : '']">
-        <span class="info-box-icon col-2" :class="[!isFull ? color : '']">
+    <div class="info-box m-0 mb-2 row aling-items-center justify-content-between" :class="[sizeClass,isFull?color:'']">
+        <span class="info-box-icon col-2" :class="[!isFull?color:'']">
             <i :class="[icon,iconColor]"></i>
         </span>
 
@@ -12,7 +12,7 @@
 
         <div v-if="maxValue" class="ms-auto col-4 align-self-center">
             <p>Tasso di {{ valueName.toLowerCase() }}</p>
-            <div class="progress ">
+            <div class="progress">
                 <div class="progress-bar" :class="colorBar" :style="{ width: progressBar }"></div>
             </div>
 
@@ -56,8 +56,7 @@ export default {
             type: String,
             default: ""},
         value: {
-            type: [String, Number],
-            default: ""
+            type: [String, Number]
         },
         valueName: {
             type: String,

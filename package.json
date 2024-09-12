@@ -16,7 +16,6 @@
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/vue-fontawesome": "^3.0.8",
     "@popperjs/core": "^2.11.8",
-    "bootstrap-icons": "^1.11.3",
     "chart.js": "^4.4.4",
     "flag-icons": "^7.2.3",
     "jquery": "^3.7.1",
