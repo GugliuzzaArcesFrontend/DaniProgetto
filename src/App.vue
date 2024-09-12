@@ -13,18 +13,17 @@
   </header>
 
   <main>
-    <Card title="Ciao" cardColor="info" label="Urgente" labelColor="danger" >
-      <InfoboxSmall icon='fas fa-suitcase' title="Report contatti" :value="14" iconColor="text-danger"
+    <Card title="Ciao" cardType="outline" cardColor="danger" label="Urgente" labelColor="danger">
+      <Infobox icon='fas fa-suitcase' title="Report contatti" :value="14" iconColor="text-danger"
         valueName="Conversioni" :maxValue="32" />
 
-      <InfoboxSmall isFull=true color="bg-danger" title="Titolo infobox2" valueName="Situazione" :value="'Cavoli amari'"
-        hasFooter=true />
+      <Infobox isFull=true color="bg-danger" title="Titolo infobox2" valueName="Situazione" :value="'Cavoli amari'" />
 
-      <InfoboxSmall color="bg-info" title="Segnaposto numero caratteri alto blablablabla" valuename="Caratteri"
+      <Infobox color="bg-info" title="Segnaposto numero caratteri alto blablablabla" valuename="Caratteri"
         :value="Infinity" />
 
-      <InfoboxSmall icon='fas fa-gear' color="bg-success" title="Altra informativa" valueName="Informazione"
-        :isFull=true :value="'Info'" />
+      <Infobox icon='fas fa-gear' color="bg-success" title="Altra informativa" valueName="Informazione"
+        :value="'Info'"  />
       <template #tools>
         <ButtonMinimize />
 
@@ -35,15 +34,8 @@
         <p>Footer</p>
       </template>
     </Card>
-    <Card title='test'cardSizes="10"/>
-    <Card title="Ciao" cardType="gradient" cardColor="warning" labelColor="badge-danger">
-      <p>placeholder</p>
+    <SmallBox />
 
-      <template #tools>
-        <ButtonMinimize />
-        <ButtonClose />
-      </template>
-    </Card>
   </main>
 </template>
 
@@ -53,7 +45,8 @@
 import ButtonClose from './components/ButtonClose.vue';
 import ButtonMinimize from './components/ButtonMinimize.vue';
 import Card from './components/Card.vue';
-import InfoboxSmall from './components/InfoboxSmall.vue';
+import Infobox from './components/Infobox.vue';
+import SmallBox from './components/SmallBox.vue';
 import TableFixedHeader from './components/TableFixedHeader.vue';
 import ToolSearchBar from './components/ToolSearchBar.vue';
 
@@ -61,16 +54,17 @@ import ToolSearchBar from './components/ToolSearchBar.vue';
 export default {
   name: 'App',
   components: {
-    InfoboxSmall,
+    Infobox,
     TableFixedHeader,
     ToolSearchBar,
     Card,
     ButtonMinimize,
     ButtonClose,
+    SmallBox
   },
   data() {
     return {
-      sizes:['11','sm-5','lg-3'],
+      sizes: ['11', 'sm-5', 'lg-3'],
       datetime: null,
       color: true,
     }

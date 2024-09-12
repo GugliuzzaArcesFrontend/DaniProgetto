@@ -1,5 +1,5 @@
 <template>
-    <div class="info-box row justify-content-between mx-0 col-11 col-md-5 col-xl-3" :class="[isFull ? color : '']">
+    <div class="info-box mx-0 row justify-content-between col-11 col-md-5 col-xl-3" :class="[isFull ? color : '']">
         <span class="info-box-icon col-2" :class="[!isFull ? color : '']">
             <i :class="[icon,iconColor]"></i>
         </span>
@@ -19,9 +19,7 @@
             <span class="progress-description">
                 {{ progressBar }} di {{ maxValue }}
             </span>
-        </div>
-        
-        <a v-if="footerLink" class="small-box-footer" :href="footerLink"></a>
+        </div>        
     </div>
 </template>
 
@@ -64,12 +62,7 @@ export default {
         maxValue: {
             default: 0
         },
-        footerLink: {
-            type: String,
-            default: "#"
-        },
         isFull: false,
-        hasFooterLink: false,
     },
     computed: {
         progressBar() {

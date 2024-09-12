@@ -32,7 +32,7 @@ import ButtonMaximize from './ButtonMaximize.vue';
 import ButtonMinimize from './ButtonMinimize.vue';
 import ButtonRefresh from './ButtonRefresh.vue';
 import CardReport from './CardReport.vue';
-import InfoboxSmall from './InfoboxSmall.vue';
+import InfoboxSmall from './Infobox.vue';
 
 export default {
     name: "InfoboxRecap",

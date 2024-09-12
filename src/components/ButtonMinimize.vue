@@ -1,20 +1,24 @@
 <template>
-    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+    <button @click="toggleCollapse" type="button" class="btn btn-tool"><!-- data-card-widget="collapse" -->
         <i class="fas fa-minus"></i>
     </button>
 </template>
 <script>
 export default {
-    name: "ButtonMinimize"
-    , methods: {
-        minimizeCard(){
-            
+    name: "ButtonMinimize",
+    data() {
+        return {
+            isCollapsed: false
         }
     },
-    mounted() {
-    // Avvia il plugin AdminLTE per gestire la card
-    $('[data-card-widget="collapse"]').CardWidget();
-  }
+    inject: ['collapseCard'],
+    methods: {
+        toggleCollapse() {
+            this.isCollapsed = !this.isCollapsed
+            this.collapseCard(this.isCollapsed);
+        }
+    },
+
 }
 </script>
 <style scoped></style>

@@ -1,5 +1,5 @@
 <template>
-    <div class="card" :class="[cardClass, cardSize sized]">
+    <div class="card" :class="[cardClass, cardSize, {'collapsed-card':isCollapsed}]">
         <div class="card-header">
             <h3 class="card-title">{{ title }}</h3>
 
@@ -9,7 +9,7 @@
             </div>
         </div>
 
-        <div class="card-body row justify-content-center justify-content-md-around">
+        <div class="card-body m-auto row justify-content-center justify-content-md-around">
             <slot></slot>
         </div>
 
@@ -24,9 +24,7 @@ export default {
     name: "Card",
     data() {
         return {
-            sized: {
-                'collapsed-card': false
-            }
+            isCollapsed: false
         }
     },
     props: {
@@ -48,16 +46,16 @@ export default {
             switch (this.cardType) {
 
                 case "outline":
-                    return `card-outline card-${this.cardColor} ${this.sizeString}`;
+                    return `card-outline card-${this.cardColor}`;
 
                 case "bg":
-                    return `bg-${this.cardColor} ${this.sizeString}`;
+                    return `bg-${this.cardColor}`;
 
                 case "gradient":
-                    return `bg-gradient-${this.cardColor} ${this.sizeString}`;
+                    return `bg-gradient-${this.cardColor}`;
 
                 default:
-                    return `${this.cardColor ? "card-" + this.cardColor : ""} ${this.sizeString}`;
+                    return `${this.cardColor ? "card-" + this.cardColor : ""}`;
             }
         },
         cardSize() {
@@ -67,6 +65,16 @@ export default {
         },
         labelClass(){
             return `badge badge-${this.labelColor}`
+        },
+    },
+    provide() {
+        return {
+            collapseCard: this.collapseCard
+        }
+    },
+    methods: {
+        collapseCard(isCollapsed) {
+            this.isCollapsed = isCollapsed
         }
     }
 }
