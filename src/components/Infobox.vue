@@ -1,5 +1,6 @@
 <template>
-    <div class="info-box m-0 mb-2 row aling-items-center justify-content-between" :class="[sizeClass,isFull?color:'']">
+    <div class="m-0 mb-2 row align-items-center  " :class="[sizeClass]">
+        <div class="info-box justify-content-between" :class="[isFull?color:'']">
         <span class="info-box-icon col-2" :class="[!isFull?color:'']">
             <i :class="[icon,iconColor]"></i>
         </span>
@@ -23,6 +24,7 @@
         <div v-if=isLoading class="overlay"><!-- segnaposto per grafica e condizione di attesa/caricamento -->
             <i class="fas fa-2x fa-sync-alt fa-spin"></i>
         </div>
+    </div>
     </div>
 </template>
 

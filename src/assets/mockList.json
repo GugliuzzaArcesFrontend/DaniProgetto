@@ -1,0 +1,213 @@
+[
+    {
+      "id": 1,
+      "todo": "todo1",
+      "status": false,
+      "task": "Design a nice theme",
+      "dueDate": "2024-09-13"
+    },
+    {
+      "id": 2,
+      "todo": "todo25",
+      "status": false,
+      "task": "Test accessibility",
+      "dueDate": "2024-10-07"
+    },
+    {
+      "id": 3,
+      "todo": "todo2",
+      "status": false,
+      "task": "Develop the frontend",
+      "dueDate": "2024-09-14"
+    },
+    {
+      "id": 4,
+      "todo": "todo4",
+      "status": false,
+      "task": "Set up database",
+      "dueDate": "2024-09-16"
+    },
+    {
+      "id": 5,
+      "todo": "todo5",
+      "status": false,
+      "task": "Create API endpoints",
+      "dueDate": "2024-09-17"
+    },
+    {
+      "id": 6,
+      "todo": "todo6",
+      "status": false,
+      "task": "Test user flows",
+      "dueDate": "2024-09-18"
+    },
+    {
+      "id": 7,
+      "todo": "todo7",
+      "status": true,
+      "task": "Fix UI bugs",
+      "dueDate": "2024-09-19"
+    },
+    {
+      "id": 8,
+      "todo": "todo8",
+      "status": false,
+      "task": "Optimize for mobile",
+      "dueDate": "2024-09-20"
+    },
+    {
+      "id": 9,
+      "todo": "todo9",
+      "status": true,
+      "task": "Set up CI/CD pipeline",
+      "dueDate": "2024-09-21"
+    },
+    {
+      "id": 10,
+      "todo": "todo10",
+      "status": false,
+      "task": "Write documentation",
+      "dueDate": "2024-09-22"
+    },
+    {
+      "id": 11,
+      "todo": "todo11",
+      "status": false,
+      "task": "Design landing page",
+      "dueDate": "2024-09-23"
+    },
+    {
+      "id": 12,
+      "todo": "todo12",
+      "status": false,
+      "task": "Create marketing strategy",
+      "dueDate": "2024-09-24"
+    },
+    {
+      "id": 13,
+      "todo": "todo13",
+      "status": true,
+      "task": "Conduct user research",
+      "dueDate": "2024-09-25"
+    },
+    {
+      "id": 14,
+      "todo": "todo14",
+      "status": false,
+      "task": "Set up server",
+      "dueDate": "2024-09-26"
+    },
+    {
+      "id": 15,
+      "todo": "todo15",
+      "status": false,
+      "task": "Deploy app to production",
+      "dueDate": "2024-09-27"
+    },
+    {
+      "id": 16,
+      "todo": "todo16",
+      "status": true,
+      "task": "Implement analytics",
+      "dueDate": "2024-09-28"
+    },
+    {
+      "id": 17,
+      "todo": "todo17",
+      "status": false,
+      "task": "Monitor performance",
+      "dueDate": "2024-09-29"
+    },
+    {
+      "id": 18,
+      "todo": "todo18",
+      "status": true,
+      "task": "Optimize server response times",
+      "dueDate": "2024-09-30"
+    },
+    {
+      "id": 19,
+      "todo": "todo19",
+      "status": false,
+      "task": "Handle customer feedback",
+      "dueDate": "2024-10-01"
+    },
+    {
+      "id": 20,
+      "todo": "todo20",
+      "status": false,
+      "task": "Update UI components",
+      "dueDate": "2024-10-02"
+    },
+    {
+      "id": 21,
+      "todo": "todo22",
+      "status": true,
+      "task": "Fix backend bugs",
+      "dueDate": "2024-10-04"
+    },
+    {
+      "id": 22,
+      "todo": "todo23",
+      "status": false,
+      "task": "Refactor codebase",
+      "dueDate": "2024-10-05"
+    },
+    {
+      "id": 23,
+      "todo": "todo24",
+      "status": true,
+      "task": "Update dependencies",
+      "dueDate": "2024-10-06"
+    },
+    {
+      "id": 24,
+      "todo": "todo21",
+      "status": false,
+      "task": "Plan new features",
+      "dueDate": "2024-10-03"
+    },
+    {
+      "id": 25,
+      "todo": "todo26",
+      "status": false,
+      "task": "Configure SEO",
+      "dueDate": "2024-10-08"
+    },
+    {
+      "id": 26,
+      "todo": "todo27",
+      "status": true,
+      "task": "Implement push notifications",
+      "dueDate": "2024-10-09"
+    },
+    {
+      "id": 27,
+      "todo": "todo28",
+      "status": false,
+      "task": "Build user dashboard",
+      "dueDate": "2024-10-10"
+    },
+    {
+      "id": 28,
+      "todo": "todo29",
+      "status": false,
+      "task": "Optimize loading times",
+      "dueDate": "2024-10-11"
+    },
+    {
+      "id": 29,
+      "todo": "todo3",
+      "status": true,
+      "task": "Implement authentication",
+      "dueDate": "2024-09-15"
+    },
+    {
+      "id": 30,
+      "todo": "todo30",
+      "status": true,
+      "task": "Set up email notifications",
+      "dueDate": "2024-10-12"
+    }
+  ]
+  
