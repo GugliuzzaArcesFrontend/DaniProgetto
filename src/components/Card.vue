@@ -1,5 +1,5 @@
 <template>
-    <div class="card" :class="[cardClass, cardSize, { 'collapsed-card': isCollapsed }]">
+    <div class="card m-0 mb-2" :class="[cardClass, cardSize, { 'collapsed-card': isCollapsed, 'maximized-card': isMaximized }]">
         <div class="card-header">
             <h3 class="card-title">{{ title }}</h3>
 
@@ -27,6 +27,7 @@ export default {
     name: "Card",
     data() {
         return {
+            isMaximized: false,
             isCollapsed: false,
             isLoading: false
         }
@@ -41,30 +42,30 @@ export default {
             type: String,
             default: ""
         },
-        cardSizes: [String, Number, Array], //accetta un array di classi o una singola bootstrap, tolta la dicitura "col-", i.e.: ['11','sm-5','lg-3']
+        sizes: [String, Number, Array], //accetta un array di classi o una singola bootstrap, tolta la dicitura "col-", i.e.: ['11','sm-5','lg-3']
         cardType: "", //cases: "","outline","bg","gradient"
-        cardColor: "",
+        color: "",
     },
     computed: {
         cardClass() {
             switch (this.cardType) {
 
                 case "outline":
-                    return `card-outline card-${this.cardColor}`;
+                    return `card-outline card-${this.color}`;
 
                 case "bg":
-                    return `bg-${this.cardColor}`;
+                    return `bg-${this.color}`;
 
                 case "gradient":
-                    return `bg-gradient-${this.cardColor}`;
+                    return `bg-gradient-${this.color}`;
 
                 default:
-                    return `${this.cardColor ? "card-" + this.cardColor : ""}`;
+                    return `${this.color ? "card-" + this.color : ""}`;
             }
         },
         cardSize() {
-            if (typeof this.cardSizes === 'object') return this.cardSizes.map(size => "col-" + size).join(" ")
-            else if (typeof this.cardSizes === "string" || typeof this.cardSizes === "number") return "col-" + this.cardSizes
+            if (typeof this.sizes === 'object') return this.sizes.map(size => "col-" + size).join(" ")
+            else if (typeof this.sizes === "string" || typeof this.sizes === "number") return "col-" + this.sizes
             else return "col"
         },
         labelClass() {
@@ -73,13 +74,20 @@ export default {
     },
     provide() {
         return {
-            collapseCard: this.collapseCard
+            maximizeCard: this.maximizeCard,
+            collapseCard: this.collapseCard,
         }
     },
+    
     methods: {
         collapseCard(isCollapsed) {
-            this.isCollapsed = isCollapsed
-        }
+            this.isCollapsed = isCollapsed;
+            if (this.isCollapsed == true) this.isMaximized = false;
+        },
+        maximizeCard(isMaximized) {
+            this.isMaximized = isMaximized;
+            if (this.isMaximized == true) this.isCollapsed = false;
+        },
     }
 }
 </script>

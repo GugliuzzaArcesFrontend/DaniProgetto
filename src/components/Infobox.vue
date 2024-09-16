@@ -64,7 +64,7 @@ export default {
             type: String,
             default: "Valore"
         },
-        boxSizes: {
+        sizes: {
             type: [String, Number, Array],  //accetta un array di classi o una singola bootstrap, tolta la dicitura "col-", i.e.: ['11','sm-5','lg-3'],
             default: ['11',]
         },
@@ -75,8 +75,8 @@ export default {
     },
     computed: {
         sizeClass(){
-            if (typeof this.boxSizes === 'object') return this.boxSizes.map(size => "col-" + size).join(" ")
-            else if (typeof this.boxSizes === "string" || typeof this.boxSizes === "number") return "col-" + this.boxSizes
+            if (typeof this.sizes === 'object') return this.sizes.map(size => "col-" + size).join(" ")
+            else if (typeof this.sizes === "string" || typeof this.sizes === "number") return "col-" + this.sizes
             else return "col"
         },
         progressBar() {

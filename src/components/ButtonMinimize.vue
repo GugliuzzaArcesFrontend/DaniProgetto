@@ -3,6 +3,7 @@
         <i class="fas fa-minus"></i>        
     </button>
 </template>
+
 <script>
 export default {
     name: "ButtonMinimize",
@@ -18,7 +19,6 @@ export default {
             this.collapseCard(this.isCollapsed);
         }
     },
-
 }
 </script>
 <style scoped></style>

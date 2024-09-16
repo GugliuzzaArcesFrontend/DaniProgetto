@@ -1,56 +1,56 @@
 <template>
   <header>
-    <!-- <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper" :class="{
-      'green': color,
-      'red': !color
-    }" >
-      <CinappiWorld msg="ciaooooo!" :data="datetime"/>
-    </div>
-
-    <div><h1>Datetime: {{ dataOggi }}</h1></div> -->
+    <h1 v-show="false" class="text-center">Sempre sia lordato l'innominabile innominato</h1>
   </header>
 
-  <main>
-    <!-- <Card title="Master" cardType="outline" cardColor="primary" label="Main" labelColor="danger">
+  <main class="container-fluid row">
+    <Card title="Master" cardType="outline" color="primary" label="Main" labelColor="danger">
       <template #tools>
         <ButtonMinimize />
         <ButtonMaximize />
         <ButtonClose />
       </template>
-<Card title="Child" cardType="outline" cardColor="danger" label="Urgente" labelColor="danger">
-  <template #tools>
+
+      <Card title="Child" cardType="outline" color="danger" label="Urgente" labelColor="danger">
+        <template #tools>
+          <ButtonMinimize />
+          <ButtonMaximize />
+          <ButtonClose />
+        </template>
+
+        <Infobox icon='fas fa-suitcase' color="bg-warning" :sizes=sizes title="Report contatti" :value="14"
+          iconColor="text-info" valueName="Conversioni" :maxValue="32" />
+
+        <Infobox isFull=true :sizes=sizes color="bg-danger" title="Titolo infobox2" valueName="Situazione"
+          :value="'Cavoli amari'" />
+
+        <Infobox color="bg-info" :sizes=sizes title="Segnaposto numero caratteri alto blablablabla"
+          valuename="Caratteri" :value="Infinity" />
+
+        <Infobox icon='fas fa-gear' :sizes=sizes color="bg-success" title="Altra informativa"
+          valueName="Informazione" :value="'Info'" />
+      </Card>
+      <div class="w-100" />
+
+      <Card title="Child con smallbox" color="info">
+        <template #tools>
           <ButtonMinimize />
           <ButtonClose />
         </template>
 
-  <Infobox icon='fas fa-suitcase' color="bg-warning" :boxSizes=sizes title="Report contatti" :value="14"
-    iconColor="text-info" valueName="Conversioni" :maxValue="32" />
+        <SmallBox :sizes=sizes color="bg-warning" icon='fas fa-suitcase' description="Sopralluoghi" :value="14"
+          iconColor="text-success" />
 
-  <Infobox isFull=true :boxSizes=sizes color="bg-danger" title="Titolo infobox2" valueName="Situazione"
-    :value="'Cavoli amari'" />
+        <SmallBox :sizes=sizes icon='fas fa-suitcase' description="Sopralluoghi" :value="14" iconColor="text-info" />
 
-  <Infobox color="bg-info" :boxSizes=sizes title="Segnaposto numero caratteri alto blablablabla" valuename="Caratteri"
-    :value="Infinity" />
+        <SmallBox :sizes=sizes icon='fas fa-suitcase' description="Sopralluoghi" :value="14"
+          iconColor="text-success" />
 
-  <Infobox icon='fas fa-gear' :boxSizes=sizes color="bg-success" title="Altra informativa" valueName="Informazione"
-    :value="'Info'" />
-</Card>
-<div class="w-100" />
-
-<Card title="Child con smallbox" cardColor="info">
-  <template #tools>
-          <ButtonMinimize />
-          <ButtonClose />
-        </template>
-  <SmallBox :boxSizes=sizes icon='fas fa-suitcase' description="Sopralluoghi" :value="14" iconColor="text-success" />
-  <SmallBox :boxSizes=sizes icon='fas fa-suitcase' description="Sopralluoghi" :value="14" iconColor="text-info" />
-  <SmallBox :boxSizes=sizes icon='fas fa-suitcase' description="Sopralluoghi" :value="14" iconColor="text-success" />
-  <SmallBox :boxSizes=sizes icon='fas fa-suitcase' description="Sopralluoghi" :value="14" iconColor="text-success" />
-</Card>
-<div class="w-100"></div>
-</Card> -->
+        <SmallBox :sizes=sizes icon='fas fa-clipboard' description="Sopralluoghi" :value="14"
+          iconColor="text-success" />
+      </Card>
+      <div class="w-100"></div>
+    </Card>
 
     <CheckList :list="list">
       <template #tools>
