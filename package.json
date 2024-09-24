@@ -17,6 +17,7 @@
     "@fortawesome/vue-fontawesome": "^3.0.8",
     "@popperjs/core": "^2.11.8",
     "chart.js": "^4.4.4",
+    "daniprogetto": "file:",
     "flag-icons": "^7.2.3",
     "jquery": "^3.7.1",
     "vue": "^3.4.29"
