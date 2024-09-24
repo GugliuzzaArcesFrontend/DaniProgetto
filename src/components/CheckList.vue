@@ -90,7 +90,7 @@
                             'Nuova mansione' }}</h5>
                         <button type="button" @click="showModal = false" class="close" data-dismiss="modal"
                             aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+                            <span >&times;</span>
                         </button>
                     </div>
 
