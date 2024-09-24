@@ -1,6 +1,6 @@
 <!-- dependency principale: adminlte -->
  <template>
-    <button type="button" class="btn btn-tool" :data-card-widget="dataSource" :data-source="dataTarget"
+    <button type="button" class="btn btn-tool" data-card-widget="card-refresh" :data-source="dataTarget"
         :data-source-selector="sourceSelector" :data-load-on-init="dataLoadOnInit">
         <i v-if="icon" :class="iconClass"></i>
     </button>
@@ -9,7 +9,6 @@
 export default{
     name:"ButtonRefresh",
     props:{
-        dataSource: String,
         dataTarget: String,
         sourceSelector : String,
         dataLoadOnInit: {

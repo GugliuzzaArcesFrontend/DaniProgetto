@@ -1,7 +1,7 @@
 <!-- dependency principale: adminlte -->
  <template>
     <button type="button" class="btn btn-tool" @click="toggleMaximize"><!-- data-card-widget="maximize" -->
-        <i class="fas fa-expand"></i>
+        <i v-if="icon" :class="iconClass"></i>
     </button>
 </template>
 
@@ -12,6 +12,16 @@ export default {
     data(){
         return {
             isMaximized: false,
+        }
+    },
+    props:{
+        icon: {
+            type: Boolean,
+            default: true
+        },
+        iconClass: {
+            type: String,
+            default: "fas fa-expand"
         }
     },
     inject: ['maximizeCard'],

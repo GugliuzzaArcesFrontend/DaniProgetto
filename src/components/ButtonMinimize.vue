@@ -1,6 +1,6 @@
 <template>
     <button @click="toggleCollapse" type="button" class="btn btn-tool">
-        <i class="fas fa-minus"></i>        
+        <i v-if="icon" :class="iconClass"></i>       
     </button>
 </template>
 
@@ -10,6 +10,16 @@ export default {
     data() {
         return {
             isCollapsed: false
+        }
+    },
+    props:{
+        icon: {
+            type: Boolean,
+            default: true
+        },
+        iconClass: {
+            type: String,
+            default: "fas fa-minus"
         }
     },
     inject: ['collapseCard'],
